@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%=title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <header>
+    <h1><%=title %></h1>
+  </header>
+  <div role="main">
+    <p><%= content %></p>
+    <form action="/blog/edit" method="post">
+      <input type="hidden" name="id" value="<%= blog.id %>">
+      <table>
+        <tr>
+          <th>Name</th>
+          <td><input type="text" name="name" value="<%= blog.name %>"></td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><input type="text" name="email" value="<%= blog.email %>"></td>
+        </tr>
+        <tr>
+          <th>Age</th>
+          <td><input type="number" name="age" value="<%= blog.age %>"></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td><input type="submit" value="更新" /></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
