@@ -1,8 +1,16 @@
 var express = require('express');
 var app = express();
+var ejs = require("ejs");
+
+app.engine('ejs', ejs.renderFile);
 
 app.get('/', (req,res) => {
-  res.send('test');
+  res.render('index.ejs',
+    {
+      title:'Index Page',
+      content:'Index Page Contents'
+    }
+  );
 });
 
 app.listen(3000, () => {
