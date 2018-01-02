@@ -9,7 +9,18 @@ app.get('/', (req,res) => {
   res.render('index.ejs',
     {
       title:'Index Page',
-      content:'Index Page Contents'
+      content:'Index Page Contents',
+      link:{href:'/show',text:'show page'}
+    }
+  );
+});
+
+app.get('/show', (req,res) => {
+  res.render('index.ejs',
+    {
+      title:'Show Page',
+      content:'Show Page Contents',
+      link:{href:'/',text:'index page'}
     }
   );
 });
