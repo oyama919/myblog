@@ -12,7 +12,12 @@
     <h1><%=title %></h1>
   </header>
   <div role="main">
-    <p><%=content %></p>
+    <p><%-content %></p>
+    <p><%-message %></p>
+    <form action="/show/post" method="post">
+      <input type="text" name="message">
+      <input type="submit" value="送信">
+    </form>
   </div>
 </body>
 </html>
