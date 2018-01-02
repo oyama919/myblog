@@ -11,10 +11,12 @@ var session_opt = {
       saveUninitialized: false,
       cookie: { maxAge: 60 * 60 * 1000 }
     };
+var jquery = require('express-jquery');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var show = require('./routes/show');
+var ajax = require('./routes/ajax');
 
 var app = express();
 
@@ -29,6 +31,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(jquery('/jquery'));
+app.use('/ajax', ajax);
 
 app.use(session(session_opt));
 app.use('/', index);
