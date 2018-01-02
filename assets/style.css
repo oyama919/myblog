@@ -1,0 +1,26 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+h1,h2,h3,p{
+  color: #333;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+.wrapper{
+  margin: 0 auto;
+  width: 800px;
+}
+.header{
+  background: #6D817E;
+  background: rgba(51, 80, 76, 0.72);
+  padding: 5px 10px;
+}
+.page_title{
+  font-size: 20px;
+  color: #fff;
+}
+.main_content{
+  border: 1px solid #eee;
+  padding: 50px 10px;
+}
