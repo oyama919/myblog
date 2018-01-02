@@ -14,6 +14,16 @@
     </header>
     <div class="main_content" rore="main">
       <p><%-content %></p>
+      <p><%-message %></p>
+      <form action="/" method="post">
+        <input type="text" name="massage">
+        <input type="submit" value="送信">
+      </form>
+      <table>
+        <% for( var key in data) { %>
+          <%-include('temp_data_item', {key:key, val:data[key]}) %>
+        <% } %>
+      </table>
       <p><a href="<%-link.href %>"><%-link.text %></a></p>
     </div>
   </div>
