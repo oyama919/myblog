@@ -5,19 +5,21 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var name = req.query.name;
   var email = req.query.email;
+  msg=(req.session.message != undefined)? 'latest message:  '+req.session.message:'';
   var data = {
     title: 'show',
     content: 'this is show page',
-    message:''
+    message:msg
   }
   res.render('show', data);
 });
 router.post('/post', function(req, res, next) {
   var msg = req.body['message'];
+  req.session.message = msg;
   var data = {
     title: 'show',
     content: 'this is show page posted!',
-    message: msg
+    message: req.session.message
   }
   res.render('show', data);
 });
