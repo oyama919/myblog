@@ -15,7 +15,7 @@ var jquery = require('express-jquery');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var blog = require('./routes/blog');
+var blogs = require('./routes/blogs');
 var ajax = require('./routes/ajax');
 
 var app = express();
@@ -37,7 +37,7 @@ app.use('/ajax', ajax);
 app.use(session(session_opt));
 app.use('/', index);
 app.use('/users', users);
-app.use('/blog', blog);
+app.use('/blogs', blogs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

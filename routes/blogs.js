@@ -8,13 +8,9 @@ var db = new sqlite3.Database('myblog.sqlite3');
 /* GET index */
 router.get('/', function(req, res, next) {
   db.serialize(() => {
-    db.all("select * from mydata", (err, rows) => {
+    db.all("select * from mydata", (err, blogs) => {
       if (!err){
-        var data = {
-          title: 'title',
-          content: rows
-        }
-        res.render('blog/index', data);
+        res.json(blogs);
       }
     });
   });

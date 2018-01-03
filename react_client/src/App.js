@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  state = {users: []}
+  state = {blogs: []}
 
   componentDidMount() {
-    fetch('/users')
+    fetch('/blogs')
       .then(res => res.json())
-      .then(users => this.setState({ users }));
+      .then(blogs => this.setState({ blogs }));
   }
   render() {
     return (
       <div className="App">
         <h1>Users</h1>
         <ul>
-          {this.state.users.map(user =>
-            <li key={user.id}>{user.username}</li>
+          {this.state.blogs.map(blog =>
+            <li>{blog.name}</li>
           )}
         </ul>
       </div>
