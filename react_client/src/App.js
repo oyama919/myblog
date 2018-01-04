@@ -15,7 +15,13 @@ class App extends Component {
         <h1>Users</h1>
         <ul>
           {this.state.blogs.map(blog =>
-            <li>{blog.name}</li>
+            <div>
+              <li>
+                <span>name:{blog.name}  </span>
+                <span>age:{blog.age}  </span>
+                <span>email:{blog.email}  </span>
+              </li>
+            </div>
           )}
         </ul>
       </div>
